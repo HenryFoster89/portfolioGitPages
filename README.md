@@ -2,7 +2,7 @@
 
 Professional portfolio showcasing data analytics projects in logistics and supply chain management.
 
-🔗 **Live Site**: https://[YOUR_GITHUB_USERNAME].github.io/portfolioGitPages/
+🔗 **Live Site**: https://HenryFoster89.github.io/portfolioGitPages/
 
 ## About This Portfolio
 
@@ -82,7 +82,7 @@ To view this portfolio locally:
 
 1. Clone the repository
 ```bash
-git clone https://github.com/[YOUR_GITHUB_USERNAME]/portfolioGitPages.git
+git clone https://github.com/HenryFoster89/portfolioGitPages.git
 cd portfolioGitPages
 ```
 
@@ -127,7 +127,7 @@ To deploy this portfolio:
 
 3. **Push to GitHub**
    ```bash
-   git remote add origin https://github.com/[YOUR_GITHUB_USERNAME]/portfolioGitPages.git
+   git remote add origin https://github.com/HenryFoster89/portfolioGitPages.git
    git branch -M main
    git push -u origin main
    ```
@@ -138,13 +138,13 @@ To deploy this portfolio:
    - Save and wait 1-2 minutes for deployment
 
 5. **Access your site**
-   - URL: `https://[YOUR_GITHUB_USERNAME].github.io/portfolioGitPages/`
+   - URL: `https://HenryFoster89.github.io/portfolioGitPages/`
 
 ## Contact
 
 - **Email**: [YOUR_EMAIL]
 - **LinkedIn**: [YOUR_LINKEDIN_PROFILE]
-- **GitHub**: [YOUR_GITHUB_PROFILE]
+- **GitHub**: https://github.com/HenryFoster89
 
 ## License
 
