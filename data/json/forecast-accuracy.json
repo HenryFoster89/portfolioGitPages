@@ -1,0 +1,1294 @@
+{
+  "metadata": {
+    "title": "Forecast Accuracy Analysis",
+    "description": "Demand forecasting accuracy improvement analysis",
+    "generated": "2026-02-16T11:12:51.745518",
+    "total_records": 3456,
+    "date_range": {
+      "start": "2023-01-01",
+      "end": "2025-12-31"
+    }
+  },
+  "kpis": {
+    "overall_accuracy": 98.0,
+    "improvement_pct": 1.9,
+    "total_forecasts": 3456,
+    "avg_absolute_error": 22.0,
+    "best_accuracy": 100.0,
+    "worst_accuracy": 84.74
+  },
+  "charts": {
+    "monthly_trend": {
+      "labels": [
+        "2023-01",
+        "2023-02",
+        "2023-03",
+        "2023-04",
+        "2023-05",
+        "2023-06",
+        "2023-07",
+        "2023-08",
+        "2023-09",
+        "2023-10",
+        "2023-11",
+        "2023-12",
+        "2024-01",
+        "2024-02",
+        "2024-03",
+        "2024-04",
+        "2024-05",
+        "2024-06",
+        "2024-07",
+        "2024-08",
+        "2024-09",
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12"
+      ],
+      "data": [
+        96.53,
+        96.95,
+        96.94,
+        96.91,
+        96.77,
+        96.5,
+        97.11,
+        97.06,
+        95.84,
+        97.83,
+        98.03,
+        98.21,
+        97.71,
+        97.38,
+        97.77,
+        97.72,
+        98.27,
+        97.96,
+        97.49,
+        97.73,
+        97.67,
+        98.7,
+        98.77,
+        98.78,
+        98.24,
+        98.71,
+        98.7,
+        99.11,
+        98.65,
+        98.81,
+        98.85,
+        98.66,
+        98.95,
+        99.38,
+        99.5,
+        99.65
+      ],
+      "data_points": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ]
+    },
+    "category_performance": {
+      "labels": [
+        "Hoses",
+        "Timing Systems",
+        "Cooling",
+        "Accessories",
+        "Belts",
+        "Industrial"
+      ],
+      "data": [
+        98.08,
+        98.05,
+        98.01,
+        98.01,
+        97.96,
+        97.81
+      ]
+    },
+    "region_performance": {
+      "labels": [
+        "EMEA North",
+        "APAC East",
+        "APAC South",
+        "Americas North",
+        "Americas South",
+        "EMEA South"
+      ],
+      "data": [
+        98.19,
+        98.06,
+        98.05,
+        97.97,
+        97.89,
+        97.82
+      ]
+    },
+    "method_comparison": {
+      "labels": [
+        "Enhanced Time Series",
+        "Legacy Moving Average"
+      ],
+      "data": [
+        98.65,
+        97.27
+      ]
+    },
+    "error_distribution": {
+      "labels": [
+        85,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "data": [
+        2,
+        2,
+        2,
+        6,
+        10,
+        24,
+        38,
+        46,
+        78,
+        150,
+        252,
+        398,
+        630,
+        1040,
+        778
+      ]
+    },
+    "product_performance": {
+      "products": [
+        {
+          "name": "Automotive Hose A",
+          "category": "Hoses",
+          "accuracy": 98.17
+        },
+        {
+          "name": "Belt Assembly Y",
+          "category": "Belts",
+          "accuracy": 98.11
+        },
+        {
+          "name": "Timing System Z",
+          "category": "Timing Systems",
+          "accuracy": 98.05
+        },
+        {
+          "name": "Cooling Component C",
+          "category": "Cooling",
+          "accuracy": 98.01
+        },
+        {
+          "name": "Accessory Drive D",
+          "category": "Accessories",
+          "accuracy": 98.01
+        },
+        {
+          "name": "Automotive Hose B",
+          "category": "Hoses",
+          "accuracy": 98.0
+        },
+        {
+          "name": "Belt Assembly X",
+          "category": "Belts",
+          "accuracy": 97.81
+        },
+        {
+          "name": "Industrial Belt E",
+          "category": "Industrial",
+          "accuracy": 97.81
+        }
+      ]
+    }
+  },
+  "recent_data": [
+    {
+      "date": "2025-12-01",
+      "product": "Industrial Belt E",
+      "region": "Americas South",
+      "forecast": 1557,
+      "actual": 1550,
+      "error": 7,
+      "accuracy": 99.55,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Industrial Belt E",
+      "region": "Americas North",
+      "forecast": 1710,
+      "actual": 1714,
+      "error": 4,
+      "accuracy": 99.77,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Industrial Belt E",
+      "region": "APAC South",
+      "forecast": 1839,
+      "actual": 1830,
+      "error": 9,
+      "accuracy": 99.51,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Industrial Belt E",
+      "region": "APAC East",
+      "forecast": 1849,
+      "actual": 1857,
+      "error": 8,
+      "accuracy": 99.57,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Industrial Belt E",
+      "region": "EMEA South",
+      "forecast": 1164,
+      "actual": 1159,
+      "error": 5,
+      "accuracy": 99.57,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Industrial Belt E",
+      "region": "EMEA North",
+      "forecast": 1904,
+      "actual": 1898,
+      "error": 6,
+      "accuracy": 99.68,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Accessory Drive D",
+      "region": "Americas South",
+      "forecast": 1139,
+      "actual": 1141,
+      "error": 2,
+      "accuracy": 99.82,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Accessory Drive D",
+      "region": "Americas North",
+      "forecast": 1424,
+      "actual": 1420,
+      "error": 4,
+      "accuracy": 99.72,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Accessory Drive D",
+      "region": "APAC South",
+      "forecast": 1527,
+      "actual": 1530,
+      "error": 3,
+      "accuracy": 99.8,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Accessory Drive D",
+      "region": "APAC East",
+      "forecast": 1121,
+      "actual": 1115,
+      "error": 6,
+      "accuracy": 99.46,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Accessory Drive D",
+      "region": "EMEA South",
+      "forecast": 1090,
+      "actual": 1089,
+      "error": 1,
+      "accuracy": 99.91,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Accessory Drive D",
+      "region": "EMEA North",
+      "forecast": 1642,
+      "actual": 1640,
+      "error": 2,
+      "accuracy": 99.88,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Cooling Component C",
+      "region": "Americas South",
+      "forecast": 1653,
+      "actual": 1653,
+      "error": 0,
+      "accuracy": 100.0,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Cooling Component C",
+      "region": "Americas North",
+      "forecast": 1448,
+      "actual": 1452,
+      "error": 4,
+      "accuracy": 99.72,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Cooling Component C",
+      "region": "APAC South",
+      "forecast": 1144,
+      "actual": 1137,
+      "error": 7,
+      "accuracy": 99.38,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Cooling Component C",
+      "region": "APAC East",
+      "forecast": 1695,
+      "actual": 1714,
+      "error": 19,
+      "accuracy": 98.89,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Cooling Component C",
+      "region": "EMEA South",
+      "forecast": 1507,
+      "actual": 1508,
+      "error": 1,
+      "accuracy": 99.93,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Cooling Component C",
+      "region": "EMEA North",
+      "forecast": 1123,
+      "actual": 1114,
+      "error": 9,
+      "accuracy": 99.19,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Timing System Z",
+      "region": "Americas South",
+      "forecast": 1818,
+      "actual": 1826,
+      "error": 8,
+      "accuracy": 99.56,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Timing System Z",
+      "region": "Americas North",
+      "forecast": 1404,
+      "actual": 1405,
+      "error": 1,
+      "accuracy": 99.93,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Timing System Z",
+      "region": "APAC South",
+      "forecast": 1459,
+      "actual": 1443,
+      "error": 16,
+      "accuracy": 98.89,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Timing System Z",
+      "region": "APAC East",
+      "forecast": 1884,
+      "actual": 1879,
+      "error": 5,
+      "accuracy": 99.73,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Timing System Z",
+      "region": "EMEA South",
+      "forecast": 1625,
+      "actual": 1627,
+      "error": 2,
+      "accuracy": 99.88,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Timing System Z",
+      "region": "EMEA North",
+      "forecast": 1667,
+      "actual": 1664,
+      "error": 3,
+      "accuracy": 99.82,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly Y",
+      "region": "Americas South",
+      "forecast": 1138,
+      "actual": 1129,
+      "error": 9,
+      "accuracy": 99.2,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly Y",
+      "region": "Americas North",
+      "forecast": 1630,
+      "actual": 1625,
+      "error": 5,
+      "accuracy": 99.69,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly Y",
+      "region": "APAC South",
+      "forecast": 1244,
+      "actual": 1240,
+      "error": 4,
+      "accuracy": 99.68,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly Y",
+      "region": "APAC East",
+      "forecast": 1462,
+      "actual": 1459,
+      "error": 3,
+      "accuracy": 99.79,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly Y",
+      "region": "EMEA South",
+      "forecast": 1875,
+      "actual": 1874,
+      "error": 1,
+      "accuracy": 99.95,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly Y",
+      "region": "EMEA North",
+      "forecast": 1473,
+      "actual": 1469,
+      "error": 4,
+      "accuracy": 99.73,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly X",
+      "region": "Americas South",
+      "forecast": 1864,
+      "actual": 1870,
+      "error": 6,
+      "accuracy": 99.68,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly X",
+      "region": "Americas North",
+      "forecast": 1877,
+      "actual": 1885,
+      "error": 8,
+      "accuracy": 99.58,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly X",
+      "region": "APAC South",
+      "forecast": 1912,
+      "actual": 1895,
+      "error": 17,
+      "accuracy": 99.1,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly X",
+      "region": "APAC East",
+      "forecast": 1792,
+      "actual": 1791,
+      "error": 1,
+      "accuracy": 99.94,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly X",
+      "region": "EMEA South",
+      "forecast": 1935,
+      "actual": 1946,
+      "error": 11,
+      "accuracy": 99.43,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly X",
+      "region": "EMEA North",
+      "forecast": 1643,
+      "actual": 1636,
+      "error": 7,
+      "accuracy": 99.57,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose B",
+      "region": "Americas South",
+      "forecast": 1806,
+      "actual": 1810,
+      "error": 4,
+      "accuracy": 99.78,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose B",
+      "region": "Americas North",
+      "forecast": 1795,
+      "actual": 1790,
+      "error": 5,
+      "accuracy": 99.72,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose B",
+      "region": "APAC South",
+      "forecast": 1655,
+      "actual": 1657,
+      "error": 2,
+      "accuracy": 99.88,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose B",
+      "region": "APAC East",
+      "forecast": 1698,
+      "actual": 1696,
+      "error": 2,
+      "accuracy": 99.88,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose B",
+      "region": "EMEA South",
+      "forecast": 1876,
+      "actual": 1875,
+      "error": 1,
+      "accuracy": 99.95,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose B",
+      "region": "EMEA North",
+      "forecast": 1271,
+      "actual": 1275,
+      "error": 4,
+      "accuracy": 99.69,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose A",
+      "region": "Americas South",
+      "forecast": 1150,
+      "actual": 1140,
+      "error": 10,
+      "accuracy": 99.12,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose A",
+      "region": "Americas North",
+      "forecast": 1902,
+      "actual": 1912,
+      "error": 10,
+      "accuracy": 99.48,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose A",
+      "region": "APAC South",
+      "forecast": 1244,
+      "actual": 1242,
+      "error": 2,
+      "accuracy": 99.84,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose A",
+      "region": "APAC East",
+      "forecast": 1832,
+      "actual": 1840,
+      "error": 8,
+      "accuracy": 99.57,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose A",
+      "region": "EMEA South",
+      "forecast": 1270,
+      "actual": 1270,
+      "error": 0,
+      "accuracy": 100.0,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose A",
+      "region": "EMEA North",
+      "forecast": 1305,
+      "actual": 1302,
+      "error": 3,
+      "accuracy": 99.77,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Industrial Belt E",
+      "region": "Americas South",
+      "forecast": 1557,
+      "actual": 1550,
+      "error": 7,
+      "accuracy": 99.55,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Industrial Belt E",
+      "region": "Americas North",
+      "forecast": 1710,
+      "actual": 1714,
+      "error": 4,
+      "accuracy": 99.77,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Industrial Belt E",
+      "region": "APAC South",
+      "forecast": 1839,
+      "actual": 1830,
+      "error": 9,
+      "accuracy": 99.51,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Industrial Belt E",
+      "region": "APAC East",
+      "forecast": 1849,
+      "actual": 1857,
+      "error": 8,
+      "accuracy": 99.57,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Industrial Belt E",
+      "region": "EMEA South",
+      "forecast": 1164,
+      "actual": 1159,
+      "error": 5,
+      "accuracy": 99.57,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Industrial Belt E",
+      "region": "EMEA North",
+      "forecast": 1904,
+      "actual": 1898,
+      "error": 6,
+      "accuracy": 99.68,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Accessory Drive D",
+      "region": "Americas South",
+      "forecast": 1139,
+      "actual": 1141,
+      "error": 2,
+      "accuracy": 99.82,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Accessory Drive D",
+      "region": "Americas North",
+      "forecast": 1424,
+      "actual": 1420,
+      "error": 4,
+      "accuracy": 99.72,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Accessory Drive D",
+      "region": "APAC South",
+      "forecast": 1527,
+      "actual": 1530,
+      "error": 3,
+      "accuracy": 99.8,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Accessory Drive D",
+      "region": "APAC East",
+      "forecast": 1121,
+      "actual": 1115,
+      "error": 6,
+      "accuracy": 99.46,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Accessory Drive D",
+      "region": "EMEA South",
+      "forecast": 1090,
+      "actual": 1089,
+      "error": 1,
+      "accuracy": 99.91,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Accessory Drive D",
+      "region": "EMEA North",
+      "forecast": 1642,
+      "actual": 1640,
+      "error": 2,
+      "accuracy": 99.88,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Cooling Component C",
+      "region": "Americas South",
+      "forecast": 1653,
+      "actual": 1653,
+      "error": 0,
+      "accuracy": 100.0,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Cooling Component C",
+      "region": "Americas North",
+      "forecast": 1448,
+      "actual": 1452,
+      "error": 4,
+      "accuracy": 99.72,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Cooling Component C",
+      "region": "APAC South",
+      "forecast": 1144,
+      "actual": 1137,
+      "error": 7,
+      "accuracy": 99.38,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Cooling Component C",
+      "region": "APAC East",
+      "forecast": 1695,
+      "actual": 1714,
+      "error": 19,
+      "accuracy": 98.89,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Cooling Component C",
+      "region": "EMEA South",
+      "forecast": 1507,
+      "actual": 1508,
+      "error": 1,
+      "accuracy": 99.93,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Cooling Component C",
+      "region": "EMEA North",
+      "forecast": 1123,
+      "actual": 1114,
+      "error": 9,
+      "accuracy": 99.19,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Timing System Z",
+      "region": "Americas South",
+      "forecast": 1818,
+      "actual": 1826,
+      "error": 8,
+      "accuracy": 99.56,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Timing System Z",
+      "region": "Americas North",
+      "forecast": 1404,
+      "actual": 1405,
+      "error": 1,
+      "accuracy": 99.93,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Timing System Z",
+      "region": "APAC South",
+      "forecast": 1459,
+      "actual": 1443,
+      "error": 16,
+      "accuracy": 98.89,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Timing System Z",
+      "region": "APAC East",
+      "forecast": 1884,
+      "actual": 1879,
+      "error": 5,
+      "accuracy": 99.73,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Timing System Z",
+      "region": "EMEA South",
+      "forecast": 1625,
+      "actual": 1627,
+      "error": 2,
+      "accuracy": 99.88,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Timing System Z",
+      "region": "EMEA North",
+      "forecast": 1667,
+      "actual": 1664,
+      "error": 3,
+      "accuracy": 99.82,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly Y",
+      "region": "Americas South",
+      "forecast": 1138,
+      "actual": 1129,
+      "error": 9,
+      "accuracy": 99.2,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly Y",
+      "region": "Americas North",
+      "forecast": 1630,
+      "actual": 1625,
+      "error": 5,
+      "accuracy": 99.69,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly Y",
+      "region": "APAC South",
+      "forecast": 1244,
+      "actual": 1240,
+      "error": 4,
+      "accuracy": 99.68,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly Y",
+      "region": "APAC East",
+      "forecast": 1462,
+      "actual": 1459,
+      "error": 3,
+      "accuracy": 99.79,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly Y",
+      "region": "EMEA South",
+      "forecast": 1875,
+      "actual": 1874,
+      "error": 1,
+      "accuracy": 99.95,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly Y",
+      "region": "EMEA North",
+      "forecast": 1473,
+      "actual": 1469,
+      "error": 4,
+      "accuracy": 99.73,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly X",
+      "region": "Americas South",
+      "forecast": 1864,
+      "actual": 1870,
+      "error": 6,
+      "accuracy": 99.68,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly X",
+      "region": "Americas North",
+      "forecast": 1877,
+      "actual": 1885,
+      "error": 8,
+      "accuracy": 99.58,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly X",
+      "region": "APAC South",
+      "forecast": 1912,
+      "actual": 1895,
+      "error": 17,
+      "accuracy": 99.1,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly X",
+      "region": "APAC East",
+      "forecast": 1792,
+      "actual": 1791,
+      "error": 1,
+      "accuracy": 99.94,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly X",
+      "region": "EMEA South",
+      "forecast": 1935,
+      "actual": 1946,
+      "error": 11,
+      "accuracy": 99.43,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Belt Assembly X",
+      "region": "EMEA North",
+      "forecast": 1643,
+      "actual": 1636,
+      "error": 7,
+      "accuracy": 99.57,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose B",
+      "region": "Americas South",
+      "forecast": 1806,
+      "actual": 1810,
+      "error": 4,
+      "accuracy": 99.78,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose B",
+      "region": "Americas North",
+      "forecast": 1795,
+      "actual": 1790,
+      "error": 5,
+      "accuracy": 99.72,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose B",
+      "region": "APAC South",
+      "forecast": 1655,
+      "actual": 1657,
+      "error": 2,
+      "accuracy": 99.88,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose B",
+      "region": "APAC East",
+      "forecast": 1698,
+      "actual": 1696,
+      "error": 2,
+      "accuracy": 99.88,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose B",
+      "region": "EMEA South",
+      "forecast": 1876,
+      "actual": 1875,
+      "error": 1,
+      "accuracy": 99.95,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose B",
+      "region": "EMEA North",
+      "forecast": 1271,
+      "actual": 1275,
+      "error": 4,
+      "accuracy": 99.69,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose A",
+      "region": "Americas South",
+      "forecast": 1150,
+      "actual": 1140,
+      "error": 10,
+      "accuracy": 99.12,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose A",
+      "region": "Americas North",
+      "forecast": 1902,
+      "actual": 1912,
+      "error": 10,
+      "accuracy": 99.48,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose A",
+      "region": "APAC South",
+      "forecast": 1244,
+      "actual": 1242,
+      "error": 2,
+      "accuracy": 99.84,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose A",
+      "region": "APAC East",
+      "forecast": 1832,
+      "actual": 1840,
+      "error": 8,
+      "accuracy": 99.57,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose A",
+      "region": "EMEA South",
+      "forecast": 1270,
+      "actual": 1270,
+      "error": 0,
+      "accuracy": 100.0,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-12-01",
+      "product": "Automotive Hose A",
+      "region": "EMEA North",
+      "forecast": 1305,
+      "actual": 1302,
+      "error": 3,
+      "accuracy": 99.77,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-11-01",
+      "product": "Industrial Belt E",
+      "region": "Americas South",
+      "forecast": 1376,
+      "actual": 1380,
+      "error": 4,
+      "accuracy": 99.71,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-11-01",
+      "product": "Industrial Belt E",
+      "region": "Americas North",
+      "forecast": 1242,
+      "actual": 1233,
+      "error": 9,
+      "accuracy": 99.27,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-11-01",
+      "product": "Industrial Belt E",
+      "region": "APAC South",
+      "forecast": 1191,
+      "actual": 1176,
+      "error": 15,
+      "accuracy": 98.72,
+      "method": "Enhanced Time Series"
+    },
+    {
+      "date": "2025-11-01",
+      "product": "Industrial Belt E",
+      "region": "APAC East",
+      "forecast": 1365,
+      "actual": 1353,
+      "error": 12,
+      "accuracy": 99.11,
+      "method": "Enhanced Time Series"
+    }
+  ],
+  "filters": {
+    "products": [
+      "Accessory Drive D",
+      "Automotive Hose A",
+      "Automotive Hose B",
+      "Belt Assembly X",
+      "Belt Assembly Y",
+      "Cooling Component C",
+      "Industrial Belt E",
+      "Timing System Z"
+    ],
+    "categories": [
+      "Accessories",
+      "Belts",
+      "Cooling",
+      "Hoses",
+      "Industrial",
+      "Timing Systems"
+    ],
+    "regions": [
+      "APAC East",
+      "APAC South",
+      "Americas North",
+      "Americas South",
+      "EMEA North",
+      "EMEA South"
+    ]
+  }
+}

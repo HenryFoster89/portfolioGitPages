@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forecast Accuracy Analysis - Enrico Stancanelli</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    /* Project Page Specific Styles */
+    .project-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .project-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .project-header .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .kpi-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .kpi-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #667eea;
+      margin: 10px 0;
+    }
+
+    .kpi-label {
+      font-size: 0.95rem;
+      color: #666;
+      font-weight: 500;
+    }
+
+    .kpi-change {
+      font-size: 0.9rem;
+      color: #10b981;
+      margin-top: 8px;
+    }
+
+    .chart-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin: 30px 0;
+    }
+
+    .chart-header {
+      margin-bottom: 20px;
+    }
+
+    .chart-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 5px;
+    }
+
+    .chart-description {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .chart-wrapper {
+      position: relative;
+      height: 400px;
+      margin-top: 20px;
+    }
+
+    .chart-wrapper.small {
+      height: 300px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .filter-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #4a5568;
+      margin-bottom: 5px;
+    }
+
+    .filter-group select {
+      padding: 8px 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      background: white;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .filter-group select:hover {
+      border-color: #667eea;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      margin-bottom: 20px;
+      transition: background 0.3s;
+    }
+
+    .back-link:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .loading {
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    .two-column-charts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    @media (max-width: 768px) {
+      .project-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .two-column-charts {
+        grid-template-columns: 1fr;
+      }
+
+      .chart-wrapper {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Project Header -->
+  <div class="project-header">
+    <div class="container">
+      <a href="../index.html" class="back-link">← Back to Portfolio</a>
+      <h1>Forecast Accuracy Analysis</h1>
+      <p class="subtitle">Demand Forecasting Optimization | 23% Accuracy Improvement</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section style="padding: 60px 20px; background: #f7fafc;">
+    <div class="container">
+
+      <!-- Loading State -->
+      <div id="loading" class="loading">
+        📊 Loading forecast data...
+      </div>
+
+      <!-- Content (hidden until loaded) -->
+      <div id="content" style="display: none;">
+
+        <!-- KPI Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Overall Accuracy</div>
+            <div class="kpi-value" id="kpi-accuracy">--</div>
+            <div class="kpi-change" id="kpi-improvement">--</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Total Forecasts</div>
+            <div class="kpi-value" id="kpi-total">--</div>
+            <div class="kpi-change">3 Years of Data</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Avg Absolute Error</div>
+            <div class="kpi-value" id="kpi-error">--</div>
+            <div class="kpi-change">Units per Forecast</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Best Accuracy</div>
+            <div class="kpi-value" id="kpi-best">--</div>
+            <div class="kpi-change">Peak Performance</div>
+          </div>
+        </div>
+
+        <!-- Main Chart: Accuracy Trend Over Time -->
+        <div class="chart-container">
+          <div class="chart-header">
+            <h3 class="chart-title">📈 Forecast Accuracy Trend Over Time</h3>
+            <p class="chart-description">
+              Monthly accuracy showing gradual improvement from legacy methods to enhanced time series modeling
+            </p>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="trendChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Two Column Charts -->
+        <div class="two-column-charts">
+
+          <!-- Category Performance -->
+          <div class="chart-container">
+            <div class="chart-header">
+              <h3 class="chart-title">📊 Accuracy by Product Category</h3>
+              <p class="chart-description">Performance comparison across product lines</p>
+            </div>
+            <div class="chart-wrapper small">
+              <canvas id="categoryChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Region Performance -->
+          <div class="chart-container">
+            <div class="chart-header">
+              <h3 class="chart-title">🌍 Accuracy by Region</h3>
+              <p class="chart-description">Geographic performance distribution</p>
+            </div>
+            <div class="chart-wrapper small">
+              <canvas id="regionChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Method Comparison -->
+        <div class="chart-container">
+          <div class="chart-header">
+            <h3 class="chart-title">🔬 Forecast Method Comparison</h3>
+            <p class="chart-description">
+              Impact of transitioning from legacy moving average to enhanced time series methods
+            </p>
+          </div>
+          <div class="chart-wrapper small">
+            <canvas id="methodChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Error Distribution -->
+        <div class="chart-container">
+          <div class="chart-header">
+            <h3 class="chart-title">📊 Accuracy Distribution</h3>
+            <p class="chart-description">
+              Histogram showing frequency of forecast accuracy levels
+            </p>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="distributionChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // Load and visualize data
+    let chartData = null;
+
+    async function loadData() {
+      try {
+        const response = await fetch('../data/json/forecast-accuracy.json');
+        chartData = await response.json();
+
+        // Update KPIs
+        document.getElementById('kpi-accuracy').textContent = chartData.kpis.overall_accuracy + '%';
+        document.getElementById('kpi-improvement').textContent = '+' + chartData.kpis.improvement_pct + '% Improvement';
+        document.getElementById('kpi-total').textContent = chartData.kpis.total_forecasts.toLocaleString();
+        document.getElementById('kpi-error').textContent = Math.round(chartData.kpis.avg_absolute_error);
+        document.getElementById('kpi-best').textContent = chartData.kpis.best_accuracy + '%';
+
+        // Create charts
+        createTrendChart();
+        createCategoryChart();
+        createRegionChart();
+        createMethodChart();
+        createDistributionChart();
+
+        // Show content
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+
+      } catch (error) {
+        document.getElementById('loading').innerHTML =
+          '❌ Error loading data. Please ensure you have run:<br>' +
+          '1. python python/database_schema.py<br>' +
+          '2. python python/generate_data.py<br>' +
+          '3. python python/export_to_json.py';
+        console.error('Error loading data:', error);
+      }
+    }
+
+    function createTrendChart() {
+      const ctx = document.getElementById('trendChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: chartData.charts.monthly_trend.labels,
+          datasets: [{
+            label: 'Forecast Accuracy %',
+            data: chartData.charts.monthly_trend.data,
+            borderColor: '#667eea',
+            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+            borderWidth: 3,
+            fill: true,
+            tension: 0.4,
+            pointRadius: 3,
+            pointHoverRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: true },
+            tooltip: {
+              callbacks: {
+                label: (context) => `Accuracy: ${context.parsed.y}%`
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: false,
+              min: 70,
+              max: 100,
+              ticks: {
+                callback: (value) => value + '%'
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function createCategoryChart() {
+      const ctx = document.getElementById('categoryChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: chartData.charts.category_performance.labels,
+          datasets: [{
+            label: 'Accuracy %',
+            data: chartData.charts.category_performance.data,
+            backgroundColor: [
+              '#667eea',
+              '#764ba2',
+              '#f093fb',
+              '#4facfe',
+              '#43e97b',
+              '#fa709a'
+            ],
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: {
+              beginAtZero: false,
+              min: 70,
+              max: 100,
+              ticks: {
+                callback: (value) => value + '%'
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function createRegionChart() {
+      const ctx = document.getElementById('regionChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: chartData.charts.region_performance.labels,
+          datasets: [{
+            data: chartData.charts.region_performance.data,
+            backgroundColor: [
+              '#667eea',
+              '#764ba2',
+              '#f093fb',
+              '#4facfe',
+              '#43e97b',
+              '#fa709a'
+            ],
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'right'
+            },
+            tooltip: {
+              callbacks: {
+                label: (context) => `${context.label}: ${context.parsed}%`
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function createMethodChart() {
+      const ctx = document.getElementById('methodChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: chartData.charts.method_comparison.labels,
+          datasets: [{
+            label: 'Accuracy %',
+            data: chartData.charts.method_comparison.data,
+            backgroundColor: ['#f093fb', '#667eea'],
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          indexAxis: 'y',
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            x: {
+              beginAtZero: false,
+              min: 70,
+              max: 100,
+              ticks: {
+                callback: (value) => value + '%'
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function createDistributionChart() {
+      const ctx = document.getElementById('distributionChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: chartData.charts.error_distribution.labels,
+          datasets: [{
+            label: 'Frequency',
+            data: chartData.charts.error_distribution.data,
+            backgroundColor: '#667eea',
+            borderRadius: 4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Accuracy % Bucket'
+              }
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'Number of Forecasts'
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Load data on page load
+    loadData();
+  </script>
+
+</body>
+</html>

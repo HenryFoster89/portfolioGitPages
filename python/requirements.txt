@@ -1,0 +1,15 @@
+# Python dependencies for portfolio data generation
+# Install with: pip install -r requirements.txt
+
+# Core data processing
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Database (SQLite is built-in, no package needed)
+# But adding support libraries for better functionality
+sqlite3worker>=0.4.2  # Optional: for thread-safe operations
+
+# For future enhancements (optional)
+# faker>=20.0.0  # For generating realistic fake data
+# matplotlib>=3.7.0  # For generating chart images
+# seaborn>=0.12.0  # For advanced visualizations
