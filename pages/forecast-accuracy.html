@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forecast Accuracy Analysis - Enrico Stancanelli</title>
+  <title>OTIF Analysis - Enrico Stancanelli</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
-    /* Project Page Specific Styles */
     .project-header {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
@@ -69,10 +68,10 @@
       font-weight: 500;
     }
 
-    .kpi-change {
-      font-size: 0.9rem;
-      color: #10b981;
-      margin-top: 8px;
+    .kpi-sub {
+      font-size: 0.85rem;
+      color: #999;
+      margin-top: 6px;
     }
 
     .chart-container {
@@ -109,39 +108,6 @@
       height: 300px;
     }
 
-    .filters {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    .filter-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .filter-group label {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #4a5568;
-      margin-bottom: 5px;
-    }
-
-    .filter-group select {
-      padding: 8px 12px;
-      border: 2px solid #e2e8f0;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      background: white;
-      cursor: pointer;
-      transition: border-color 0.2s;
-    }
-
-    .filter-group select:hover {
-      border-color: #667eea;
-    }
-
     .back-link {
       display: inline-flex;
       align-items: center;
@@ -174,17 +140,9 @@
     }
 
     @media (max-width: 768px) {
-      .project-header h1 {
-        font-size: 1.8rem;
-      }
-
-      .two-column-charts {
-        grid-template-columns: 1fr;
-      }
-
-      .chart-wrapper {
-        height: 300px;
-      }
+      .project-header h1 { font-size: 1.8rem; }
+      .two-column-charts { grid-template-columns: 1fr; }
+      .chart-wrapper { height: 300px; }
     }
   </style>
 </head>
@@ -194,8 +152,8 @@
   <div class="project-header">
     <div class="container">
       <a href="../index.html" class="back-link">← Back to Portfolio</a>
-      <h1>Forecast Accuracy Analysis</h1>
-      <p class="subtitle">Demand Forecasting Optimization | 23% Accuracy Improvement</p>
+      <h1>OTIF Analysis</h1>
+      <p class="subtitle">On Time In Full — Supply Chain Service Level Monitoring</p>
     </div>
   </div>
 
@@ -205,7 +163,7 @@
 
       <!-- Loading State -->
       <div id="loading" class="loading">
-        📊 Loading forecast data...
+        🚚 Loading OTIF data...
       </div>
 
       <!-- Content (hidden until loaded) -->
@@ -214,36 +172,36 @@
         <!-- KPI Cards -->
         <div class="kpi-grid">
           <div class="kpi-card">
-            <div class="kpi-label">Overall Accuracy</div>
-            <div class="kpi-value" id="kpi-accuracy">--</div>
-            <div class="kpi-change" id="kpi-improvement">--</div>
+            <div class="kpi-label">Avg OTIF Rate</div>
+            <div class="kpi-value" id="kpi-otif">--</div>
+            <div class="kpi-sub">On Time &amp; In Full</div>
           </div>
 
           <div class="kpi-card">
-            <div class="kpi-label">Total Forecasts</div>
+            <div class="kpi-label">Avg On Time Rate</div>
+            <div class="kpi-value" id="kpi-ontime">--</div>
+            <div class="kpi-sub">Delivered on schedule</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Avg In Full Rate</div>
+            <div class="kpi-value" id="kpi-infull">--</div>
+            <div class="kpi-sub">Complete orders</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Total Orders</div>
             <div class="kpi-value" id="kpi-total">--</div>
-            <div class="kpi-change">3 Years of Data</div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-label">Avg Absolute Error</div>
-            <div class="kpi-value" id="kpi-error">--</div>
-            <div class="kpi-change">Units per Forecast</div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-label">Best Accuracy</div>
-            <div class="kpi-value" id="kpi-best">--</div>
-            <div class="kpi-change">Peak Performance</div>
+            <div class="kpi-sub">2023 – 2024</div>
           </div>
         </div>
 
-        <!-- Main Chart: Accuracy Trend Over Time -->
+        <!-- Main Chart: OTIF Trend Over Time -->
         <div class="chart-container">
           <div class="chart-header">
-            <h3 class="chart-title">📈 Forecast Accuracy Trend Over Time</h3>
+            <h3 class="chart-title">📈 OTIF Trend Over Time</h3>
             <p class="chart-description">
-              Monthly accuracy showing gradual improvement from legacy methods to enhanced time series modeling
+              Monthly evolution of OTIF %, On Time % and In Full % — mese per mese da gennaio 2023 a dicembre 2024
             </p>
           </div>
           <div class="chart-wrapper">
@@ -254,262 +212,214 @@
         <!-- Two Column Charts -->
         <div class="two-column-charts">
 
-          <!-- Category Performance -->
+          <!-- 2023 vs 2024 Comparison -->
           <div class="chart-container">
             <div class="chart-header">
-              <h3 class="chart-title">📊 Accuracy by Product Category</h3>
-              <p class="chart-description">Performance comparison across product lines</p>
+              <h3 class="chart-title">📊 2023 vs 2024 Average</h3>
+              <p class="chart-description">Confronto medio annuo dei tre KPI</p>
             </div>
             <div class="chart-wrapper small">
-              <canvas id="categoryChart"></canvas>
+              <canvas id="yearChart"></canvas>
             </div>
           </div>
 
-          <!-- Region Performance -->
+          <!-- Orders Volume -->
           <div class="chart-container">
             <div class="chart-header">
-              <h3 class="chart-title">🌍 Accuracy by Region</h3>
-              <p class="chart-description">Geographic performance distribution</p>
+              <h3 class="chart-title">📦 Volume Ordini Mensile</h3>
+              <p class="chart-description">Numero totale di ordini per mese</p>
             </div>
             <div class="chart-wrapper small">
-              <canvas id="regionChart"></canvas>
+              <canvas id="volumeChart"></canvas>
             </div>
           </div>
 
-        </div>
-
-        <!-- Method Comparison -->
-        <div class="chart-container">
-          <div class="chart-header">
-            <h3 class="chart-title">🔬 Forecast Method Comparison</h3>
-            <p class="chart-description">
-              Impact of transitioning from legacy moving average to enhanced time series methods
-            </p>
-          </div>
-          <div class="chart-wrapper small">
-            <canvas id="methodChart"></canvas>
-          </div>
-        </div>
-
-        <!-- Error Distribution -->
-        <div class="chart-container">
-          <div class="chart-header">
-            <h3 class="chart-title">📊 Accuracy Distribution</h3>
-            <p class="chart-description">
-              Histogram showing frequency of forecast accuracy levels
-            </p>
-          </div>
-          <div class="chart-wrapper">
-            <canvas id="distributionChart"></canvas>
-          </div>
         </div>
 
       </div>
-
     </div>
   </section>
 
   <!-- JavaScript -->
   <script>
-    // Load and visualize data
-    let chartData = null;
-
     async function loadData() {
       try {
-        const response = await fetch('../data/json/forecast-accuracy.json');
-        chartData = await response.json();
+        const response = await fetch('../data/json/kpi_otif_by_month.json');
+        const json = await response.json();
+        const data = json.data;
 
-        // Update KPIs
-        document.getElementById('kpi-accuracy').textContent = chartData.kpis.overall_accuracy + '%';
-        document.getElementById('kpi-improvement').textContent = '+' + chartData.kpis.improvement_pct + '% Improvement';
-        document.getElementById('kpi-total').textContent = chartData.kpis.total_forecasts.toLocaleString();
-        document.getElementById('kpi-error').textContent = Math.round(chartData.kpis.avg_absolute_error);
-        document.getElementById('kpi-best').textContent = chartData.kpis.best_accuracy + '%';
+        // Compute KPIs
+        const n = data.length;
+        const avgOtif   = data.reduce((s, d) => s + d.otif_rate, 0) / n;
+        const avgOnTime = data.reduce((s, d) => s + d.on_time_rate, 0) / n;
+        const avgInFull = data.reduce((s, d) => s + d.in_full_rate, 0) / n;
+        const totalOrders = data.reduce((s, d) => s + d.total_orders, 0);
 
-        // Create charts
-        createTrendChart();
-        createCategoryChart();
-        createRegionChart();
-        createMethodChart();
-        createDistributionChart();
+        document.getElementById('kpi-otif').textContent   = (avgOtif   * 100).toFixed(1) + '%';
+        document.getElementById('kpi-ontime').textContent = (avgOnTime * 100).toFixed(1) + '%';
+        document.getElementById('kpi-infull').textContent = (avgInFull * 100).toFixed(1) + '%';
+        document.getElementById('kpi-total').textContent  = totalOrders.toLocaleString('it-IT');
 
-        // Show content
+        createTrendChart(data);
+        createYearChart(data);
+        createVolumeChart(data);
+
         document.getElementById('loading').style.display = 'none';
         document.getElementById('content').style.display = 'block';
 
       } catch (error) {
         document.getElementById('loading').innerHTML =
-          '❌ Error loading data. Please ensure you have run:<br>' +
-          '1. python python/database_schema.py<br>' +
-          '2. python python/generate_data.py<br>' +
-          '3. python python/export_to_json.py';
-        console.error('Error loading data:', error);
+          '❌ Error loading data: ' + error.message;
+        console.error('Error:', error);
       }
     }
 
-    function createTrendChart() {
+    function pct(rate) {
+      return parseFloat((rate * 100).toFixed(2));
+    }
+
+    function createTrendChart(data) {
       const ctx = document.getElementById('trendChart').getContext('2d');
       new Chart(ctx, {
         type: 'line',
         data: {
-          labels: chartData.charts.monthly_trend.labels,
-          datasets: [{
-            label: 'Forecast Accuracy %',
-            data: chartData.charts.monthly_trend.data,
-            borderColor: '#667eea',
-            backgroundColor: 'rgba(102, 126, 234, 0.1)',
-            borderWidth: 3,
-            fill: true,
-            tension: 0.4,
-            pointRadius: 3,
-            pointHoverRadius: 6
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: { display: true },
-            tooltip: {
-              callbacks: {
-                label: (context) => `Accuracy: ${context.parsed.y}%`
-              }
-            }
-          },
-          scales: {
-            y: {
-              beginAtZero: false,
-              min: 70,
-              max: 100,
-              ticks: {
-                callback: (value) => value + '%'
-              }
-            }
-          }
-        }
-      });
-    }
-
-    function createCategoryChart() {
-      const ctx = document.getElementById('categoryChart').getContext('2d');
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: chartData.charts.category_performance.labels,
-          datasets: [{
-            label: 'Accuracy %',
-            data: chartData.charts.category_performance.data,
-            backgroundColor: [
-              '#667eea',
-              '#764ba2',
-              '#f093fb',
-              '#4facfe',
-              '#43e97b',
-              '#fa709a'
-            ],
-            borderRadius: 6
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: { display: false }
-          },
-          scales: {
-            y: {
-              beginAtZero: false,
-              min: 70,
-              max: 100,
-              ticks: {
-                callback: (value) => value + '%'
-              }
-            }
-          }
-        }
-      });
-    }
-
-    function createRegionChart() {
-      const ctx = document.getElementById('regionChart').getContext('2d');
-      new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          labels: chartData.charts.region_performance.labels,
-          datasets: [{
-            data: chartData.charts.region_performance.data,
-            backgroundColor: [
-              '#667eea',
-              '#764ba2',
-              '#f093fb',
-              '#4facfe',
-              '#43e97b',
-              '#fa709a'
-            ],
-            borderWidth: 2
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              position: 'right'
+          labels: data.map(d => d.month),
+          datasets: [
+            {
+              label: 'OTIF %',
+              data: data.map(d => pct(d.otif_rate)),
+              borderColor: '#667eea',
+              backgroundColor: 'rgba(102, 126, 234, 0.08)',
+              borderWidth: 3,
+              fill: true,
+              tension: 0.3,
+              pointRadius: 3,
+              pointHoverRadius: 6
             },
-            tooltip: {
-              callbacks: {
-                label: (context) => `${context.label}: ${context.parsed}%`
-              }
+            {
+              label: 'On Time %',
+              data: data.map(d => pct(d.on_time_rate)),
+              borderColor: '#43e97b',
+              backgroundColor: 'rgba(67, 233, 123, 0.05)',
+              borderWidth: 2,
+              fill: false,
+              tension: 0.3,
+              pointRadius: 3,
+              pointHoverRadius: 6,
+              borderDash: [5, 3]
+            },
+            {
+              label: 'In Full %',
+              data: data.map(d => pct(d.in_full_rate)),
+              borderColor: '#f093fb',
+              backgroundColor: 'rgba(240, 147, 251, 0.05)',
+              borderWidth: 2,
+              fill: false,
+              tension: 0.3,
+              pointRadius: 3,
+              pointHoverRadius: 6,
+              borderDash: [3, 3]
             }
-          }
-        }
-      });
-    }
-
-    function createMethodChart() {
-      const ctx = document.getElementById('methodChart').getContext('2d');
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: chartData.charts.method_comparison.labels,
-          datasets: [{
-            label: 'Accuracy %',
-            data: chartData.charts.method_comparison.data,
-            backgroundColor: ['#f093fb', '#667eea'],
-            borderRadius: 6
-          }]
+          ]
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          indexAxis: 'y',
+          interaction: { mode: 'index', intersect: false },
           plugins: {
-            legend: { display: false }
+            legend: { display: true, position: 'top' },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y}%`
+              }
+            }
           },
           scales: {
-            x: {
+            y: {
               beginAtZero: false,
-              min: 70,
-              max: 100,
-              ticks: {
-                callback: (value) => value + '%'
-              }
+              min: 20,
+              max: 80,
+              ticks: { callback: (v) => v + '%' },
+              grid: { color: 'rgba(0,0,0,0.05)' }
+            },
+            x: {
+              grid: { display: false }
             }
           }
         }
       });
     }
 
-    function createDistributionChart() {
-      const ctx = document.getElementById('distributionChart').getContext('2d');
+    function createYearChart(data) {
+      const ctx = document.getElementById('yearChart').getContext('2d');
+
+      const d2023 = data.filter(d => d.month.startsWith('2023'));
+      const d2024 = data.filter(d => d.month.startsWith('2024'));
+
+      const avg = (arr, key) => parseFloat((arr.reduce((s, d) => s + d[key], 0) / arr.length * 100).toFixed(2));
+
       new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: chartData.charts.error_distribution.labels,
+          labels: ['OTIF %', 'On Time %', 'In Full %'],
+          datasets: [
+            {
+              label: '2023',
+              data: [
+                avg(d2023, 'otif_rate'),
+                avg(d2023, 'on_time_rate'),
+                avg(d2023, 'in_full_rate')
+              ],
+              backgroundColor: '#667eea',
+              borderRadius: 6
+            },
+            {
+              label: '2024',
+              data: [
+                avg(d2024, 'otif_rate'),
+                avg(d2024, 'on_time_rate'),
+                avg(d2024, 'in_full_rate')
+              ],
+              backgroundColor: '#f093fb',
+              borderRadius: 6
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: true, position: 'top' },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y}%`
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: false,
+              min: 20,
+              max: 80,
+              ticks: { callback: (v) => v + '%' }
+            }
+          }
+        }
+      });
+    }
+
+    function createVolumeChart(data) {
+      const ctx = document.getElementById('volumeChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: data.map(d => d.month),
           datasets: [{
-            label: 'Frequency',
-            data: chartData.charts.error_distribution.data,
-            backgroundColor: '#667eea',
+            label: 'Ordini Totali',
+            data: data.map(d => d.total_orders),
+            backgroundColor: data.map(d =>
+              d.month.startsWith('2023') ? 'rgba(102,126,234,0.7)' : 'rgba(240,147,251,0.7)'
+            ),
             borderRadius: 4
           }]
         },
@@ -517,27 +427,24 @@
           responsive: true,
           maintainAspectRatio: false,
           plugins: {
-            legend: { display: false }
-          },
-          scales: {
-            x: {
-              title: {
-                display: true,
-                text: 'Accuracy % Bucket'
-              }
-            },
-            y: {
-              title: {
-                display: true,
-                text: 'Number of Forecasts'
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `Ordini: ${ctx.parsed.y.toLocaleString('it-IT')}`
               }
             }
+          },
+          scales: {
+            y: {
+              beginAtZero: false,
+              ticks: { callback: (v) => v.toLocaleString('it-IT') }
+            },
+            x: { grid: { display: false } }
           }
         }
       });
     }
 
-    // Load data on page load
     loadData();
   </script>
 

@@ -1,0 +1,252 @@
+{
+  "meta": {
+    "description": "OTIF mensile aggregato — On Time In Full calcolato su tutti gli ordini. Mese di riferimento = mese dell'ordine (OrderDate). Ordini non evasi contano come NOT on time e NOT in full.",
+    "tables": [
+      "Ordinato",
+      "Venduto"
+    ],
+    "generated_at": "2026-02-24"
+  },
+  "data": [
+    {
+      "month": "2023-01",
+      "total_orders": 12011,
+      "otif_orders": 3197,
+      "on_time_orders": 3917,
+      "in_full_orders": 8388,
+      "otif_rate": 0.2662,
+      "on_time_rate": 0.3261,
+      "in_full_rate": 0.6984
+    },
+    {
+      "month": "2023-02",
+      "total_orders": 11123,
+      "otif_orders": 2951,
+      "on_time_orders": 3612,
+      "in_full_orders": 7709,
+      "otif_rate": 0.2653,
+      "on_time_rate": 0.3247,
+      "in_full_rate": 0.6931
+    },
+    {
+      "month": "2023-03",
+      "total_orders": 12332,
+      "otif_orders": 3219,
+      "on_time_orders": 3926,
+      "in_full_orders": 8613,
+      "otif_rate": 0.261,
+      "on_time_rate": 0.3184,
+      "in_full_rate": 0.6984
+    },
+    {
+      "month": "2023-04",
+      "total_orders": 12043,
+      "otif_orders": 3165,
+      "on_time_orders": 3838,
+      "in_full_orders": 8510,
+      "otif_rate": 0.2628,
+      "on_time_rate": 0.3187,
+      "in_full_rate": 0.7066
+    },
+    {
+      "month": "2023-05",
+      "total_orders": 12301,
+      "otif_orders": 3198,
+      "on_time_orders": 3839,
+      "in_full_orders": 8701,
+      "otif_rate": 0.26,
+      "on_time_rate": 0.3121,
+      "in_full_rate": 0.7073
+    },
+    {
+      "month": "2023-06",
+      "total_orders": 11667,
+      "otif_orders": 3095,
+      "on_time_orders": 3711,
+      "in_full_orders": 8294,
+      "otif_rate": 0.2653,
+      "on_time_rate": 0.3181,
+      "in_full_rate": 0.7109
+    },
+    {
+      "month": "2023-07",
+      "total_orders": 12160,
+      "otif_orders": 3243,
+      "on_time_orders": 3898,
+      "in_full_orders": 8626,
+      "otif_rate": 0.2667,
+      "on_time_rate": 0.3206,
+      "in_full_rate": 0.7094
+    },
+    {
+      "month": "2023-08",
+      "total_orders": 12131,
+      "otif_orders": 3267,
+      "on_time_orders": 3914,
+      "in_full_orders": 8539,
+      "otif_rate": 0.2693,
+      "on_time_rate": 0.3226,
+      "in_full_rate": 0.7039
+    },
+    {
+      "month": "2023-09",
+      "total_orders": 11975,
+      "otif_orders": 3101,
+      "on_time_orders": 3737,
+      "in_full_orders": 8373,
+      "otif_rate": 0.259,
+      "on_time_rate": 0.3121,
+      "in_full_rate": 0.6992
+    },
+    {
+      "month": "2023-10",
+      "total_orders": 12369,
+      "otif_orders": 3238,
+      "on_time_orders": 3979,
+      "in_full_orders": 8658,
+      "otif_rate": 0.2618,
+      "on_time_rate": 0.3217,
+      "in_full_rate": 0.7
+    },
+    {
+      "month": "2023-11",
+      "total_orders": 12041,
+      "otif_orders": 3144,
+      "on_time_orders": 3822,
+      "in_full_orders": 8401,
+      "otif_rate": 0.2611,
+      "on_time_rate": 0.3174,
+      "in_full_rate": 0.6977
+    },
+    {
+      "month": "2023-12",
+      "total_orders": 12156,
+      "otif_orders": 3226,
+      "on_time_orders": 3896,
+      "in_full_orders": 8460,
+      "otif_rate": 0.2654,
+      "on_time_rate": 0.3205,
+      "in_full_rate": 0.696
+    },
+    {
+      "month": "2024-01",
+      "total_orders": 11961,
+      "otif_orders": 3043,
+      "on_time_orders": 3751,
+      "in_full_orders": 8180,
+      "otif_rate": 0.2544,
+      "on_time_rate": 0.3136,
+      "in_full_rate": 0.6839
+    },
+    {
+      "month": "2024-02",
+      "total_orders": 11559,
+      "otif_orders": 2980,
+      "on_time_orders": 3704,
+      "in_full_orders": 7991,
+      "otif_rate": 0.2578,
+      "on_time_rate": 0.3204,
+      "in_full_rate": 0.6913
+    },
+    {
+      "month": "2024-03",
+      "total_orders": 12108,
+      "otif_orders": 3239,
+      "on_time_orders": 3907,
+      "in_full_orders": 8526,
+      "otif_rate": 0.2675,
+      "on_time_rate": 0.3227,
+      "in_full_rate": 0.7042
+    },
+    {
+      "month": "2024-04",
+      "total_orders": 12250,
+      "otif_orders": 3281,
+      "on_time_orders": 3971,
+      "in_full_orders": 8593,
+      "otif_rate": 0.2678,
+      "on_time_rate": 0.3242,
+      "in_full_rate": 0.7015
+    },
+    {
+      "month": "2024-05",
+      "total_orders": 12248,
+      "otif_orders": 3233,
+      "on_time_orders": 3978,
+      "in_full_orders": 8551,
+      "otif_rate": 0.264,
+      "on_time_rate": 0.3248,
+      "in_full_rate": 0.6982
+    },
+    {
+      "month": "2024-06",
+      "total_orders": 11919,
+      "otif_orders": 3181,
+      "on_time_orders": 3801,
+      "in_full_orders": 8447,
+      "otif_rate": 0.2669,
+      "on_time_rate": 0.3189,
+      "in_full_rate": 0.7087
+    },
+    {
+      "month": "2024-07",
+      "total_orders": 12316,
+      "otif_orders": 3295,
+      "on_time_orders": 3916,
+      "in_full_orders": 8769,
+      "otif_rate": 0.2675,
+      "on_time_rate": 0.318,
+      "in_full_rate": 0.712
+    },
+    {
+      "month": "2024-08",
+      "total_orders": 12062,
+      "otif_orders": 3256,
+      "on_time_orders": 3857,
+      "in_full_orders": 8536,
+      "otif_rate": 0.2699,
+      "on_time_rate": 0.3198,
+      "in_full_rate": 0.7077
+    },
+    {
+      "month": "2024-09",
+      "total_orders": 11752,
+      "otif_orders": 3077,
+      "on_time_orders": 3777,
+      "in_full_orders": 8194,
+      "otif_rate": 0.2618,
+      "on_time_rate": 0.3214,
+      "in_full_rate": 0.6972
+    },
+    {
+      "month": "2024-10",
+      "total_orders": 12297,
+      "otif_orders": 3192,
+      "on_time_orders": 3903,
+      "in_full_orders": 8466,
+      "otif_rate": 0.2596,
+      "on_time_rate": 0.3174,
+      "in_full_rate": 0.6885
+    },
+    {
+      "month": "2024-11",
+      "total_orders": 11609,
+      "otif_orders": 2993,
+      "on_time_orders": 3679,
+      "in_full_orders": 8017,
+      "otif_rate": 0.2578,
+      "on_time_rate": 0.3169,
+      "in_full_rate": 0.6906
+    },
+    {
+      "month": "2024-12",
+      "total_orders": 12091,
+      "otif_orders": 3100,
+      "on_time_orders": 3822,
+      "in_full_orders": 8313,
+      "otif_rate": 0.2564,
+      "on_time_rate": 0.3161,
+      "in_full_rate": 0.6875
+    }
+  ]
+}
