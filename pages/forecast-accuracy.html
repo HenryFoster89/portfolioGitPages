@@ -8,165 +8,215 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
-  <!-- Stylesheet -->
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
+    /* ── Project Header ── */
     .project-header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-xl) var(--space-lg);
     }
 
-    .project-header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    .project-header .subtitle {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin: 40px 0;
-    }
-
-    .kpi-card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .kpi-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    }
-
-    .kpi-value {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #667eea;
-      margin: 10px 0;
-    }
-
-    .kpi-label {
-      font-size: 0.95rem;
-      color: #666;
-      font-weight: 500;
-    }
-
-    .kpi-sub {
-      font-size: 0.85rem;
-      color: #999;
-      margin-top: 6px;
-    }
-
-    .chart-container {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin: 30px 0;
-    }
-
-    .chart-header {
-      margin-bottom: 20px;
-    }
-
-    .chart-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #1a202c;
-      margin-bottom: 5px;
-    }
-
-    .chart-description {
-      font-size: 0.95rem;
-      color: #666;
-    }
-
-    .chart-wrapper {
-      position: relative;
-      height: 400px;
-      margin-top: 20px;
-    }
-
-    .chart-wrapper.small {
-      height: 300px;
+    .project-header .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
     }
 
     .back-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      color: white;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--muted);
       text-decoration: none;
-      padding: 10px 20px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 8px;
-      margin-bottom: 20px;
-      transition: background 0.3s;
+      margin-bottom: var(--space-md);
+      transition: var(--t);
     }
 
-    .back-link:hover {
-      background: rgba(255,255,255,0.3);
+    .back-link:hover { color: var(--accent); }
+
+    .project-header h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: var(--space-xs);
     }
 
-    .loading {
+    .project-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: var(--space-md);
+    }
+
+    .project-header-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* ── Project Content Section ── */
+    .project-section {
+      padding: var(--space-xl) var(--space-lg);
+      background: var(--bg);
+    }
+
+    .project-section .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* ── KPI Grid ── */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+
+    .kpi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-md);
       text-align: center;
-      padding: 60px 20px;
-      font-size: 1.2rem;
-      color: #666;
+      transition: var(--t);
+    }
+
+    .kpi-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .kpi-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: var(--space-xs);
+    }
+
+    .kpi-value {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .kpi-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── Chart Containers ── */
+    .chart-container {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-md);
+      margin-bottom: var(--space-md);
+      transition: var(--t);
+    }
+
+    .chart-container:hover {
+      border-color: rgba(74, 158, 255, 0.3);
+    }
+
+    .chart-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .chart-description {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: var(--space-md);
+    }
+
+    .chart-wrapper {
+      position: relative;
+      height: 380px;
+    }
+
+    .chart-wrapper.small {
+      height: 280px;
     }
 
     .two-column-charts {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 30px;
-      margin: 30px 0;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: var(--space-md);
+    }
+
+    /* ── Loading State ── */
+    .loading {
+      text-align: center;
+      padding: var(--space-xxl) var(--space-lg);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
-      .project-header h1 { font-size: 1.8rem; }
       .two-column-charts { grid-template-columns: 1fr; }
-      .chart-wrapper { height: 300px; }
+      .chart-wrapper { height: 280px; }
+      .chart-wrapper.small { height: 240px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Project Header -->
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <a href="../index.html" class="nav-brand">E.S.</a>
+    <ul class="nav-menu">
+      <li><a href="../index.html#home"     class="nav-link">Home</a></li>
+      <li><a href="../index.html#about"    class="nav-link">About</a></li>
+      <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+      <li><a href="../index.html#skills"   class="nav-link">Skills</a></li>
+      <li><a href="../index.html#contact"  class="nav-link">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PROJECT HEADER -->
   <div class="project-header">
     <div class="container">
-      <a href="../index.html" class="back-link">← Back to Portfolio</a>
+      <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
+      <span class="hero-label">Supply Chain &middot; 288K Orders</span>
       <h1>OTIF Analysis</h1>
-      <p class="subtitle">On Time In Full — Supply Chain Service Level Monitoring</p>
+      <p class="project-subtitle">On Time In Full &mdash; Service Level Monitoring across 2023&ndash;2024</p>
+      <div class="project-header-tags">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">SQL</span>
+        <span class="tech-badge">Power BI</span>
+        <span class="tech-badge">Chart.js</span>
+        <span class="tech-badge">Supply Chain</span>
+        <span class="tech-badge">Customer Satisfaction</span>
+      </div>
     </div>
   </div>
 
-  <!-- Main Content -->
-  <section style="padding: 60px 20px; background: #f7fafc;">
+  <!-- MAIN CONTENT -->
+  <section class="project-section">
     <div class="container">
 
       <!-- Loading State -->
-      <div id="loading" class="loading">
-        🚚 Loading OTIF data...
-      </div>
+      <div id="loading" class="loading">Loading OTIF data...</div>
 
-      <!-- Content (hidden until loaded) -->
+      <!-- Content (shown after data loads) -->
       <div id="content" style="display: none;">
 
         <!-- KPI Cards -->
@@ -176,34 +226,27 @@
             <div class="kpi-value" id="kpi-otif">--</div>
             <div class="kpi-sub">On Time &amp; In Full</div>
           </div>
-
           <div class="kpi-card">
             <div class="kpi-label">Avg On Time Rate</div>
             <div class="kpi-value" id="kpi-ontime">--</div>
             <div class="kpi-sub">Delivered on schedule</div>
           </div>
-
           <div class="kpi-card">
             <div class="kpi-label">Avg In Full Rate</div>
             <div class="kpi-value" id="kpi-infull">--</div>
             <div class="kpi-sub">Complete orders</div>
           </div>
-
           <div class="kpi-card">
             <div class="kpi-label">Total Orders</div>
             <div class="kpi-value" id="kpi-total">--</div>
-            <div class="kpi-sub">2023 – 2024</div>
+            <div class="kpi-sub">2023 &ndash; 2024</div>
           </div>
         </div>
 
-        <!-- Main Chart: OTIF Trend Over Time -->
+        <!-- OTIF Trend -->
         <div class="chart-container">
-          <div class="chart-header">
-            <h3 class="chart-title">📈 OTIF Trend Over Time</h3>
-            <p class="chart-description">
-              Monthly evolution of OTIF %, On Time % and In Full % — mese per mese da gennaio 2023 a dicembre 2024
-            </p>
-          </div>
+          <h3 class="chart-title">OTIF Trend Over Time</h3>
+          <p class="chart-description">Monthly evolution of OTIF %, On Time % and In Full % — Jan 2023 to Dec 2024</p>
           <div class="chart-wrapper">
             <canvas id="trendChart"></canvas>
           </div>
@@ -212,23 +255,17 @@
         <!-- Two Column Charts -->
         <div class="two-column-charts">
 
-          <!-- 2023 vs 2024 Comparison -->
           <div class="chart-container">
-            <div class="chart-header">
-              <h3 class="chart-title">📊 2023 vs 2024 Average</h3>
-              <p class="chart-description">Confronto medio annuo dei tre KPI</p>
-            </div>
+            <h3 class="chart-title">2023 vs 2024 Average</h3>
+            <p class="chart-description">Annual average comparison across the three KPIs</p>
             <div class="chart-wrapper small">
               <canvas id="yearChart"></canvas>
             </div>
           </div>
 
-          <!-- Orders Volume -->
           <div class="chart-container">
-            <div class="chart-header">
-              <h3 class="chart-title">📦 Volume Ordini Mensile</h3>
-              <p class="chart-description">Numero totale di ordini per mese</p>
-            </div>
+            <h3 class="chart-title">Monthly Order Volume</h3>
+            <p class="chart-description">Total number of orders per month</p>
             <div class="chart-wrapper small">
               <canvas id="volumeChart"></canvas>
             </div>
@@ -240,20 +277,36 @@
     </div>
   </section>
 
-  <!-- JavaScript -->
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span class="current-year">2026</span> Enrico Stancanelli. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/[YOUR_LINKEDIN]" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">💼</a>
+        <a href="https://github.com/HenryFoster89"         class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">💻</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
+    // ── Dark theme defaults for Chart.js ──
+    Chart.defaults.color          = '#6b728c';
+    Chart.defaults.borderColor    = 'rgba(255,255,255,0.06)';
+    Chart.defaults.font.family    = "'Inter', sans-serif";
+    Chart.defaults.font.size      = 12;
+
+    // ── Load data and render ──
     async function loadData() {
       try {
         const response = await fetch('../data/json/kpi_otif_by_month.json');
-        const json = await response.json();
-        const data = json.data;
+        const json     = await response.json();
+        const data     = json.data;
 
-        // Compute KPIs
-        const n = data.length;
-        const avgOtif   = data.reduce((s, d) => s + d.otif_rate, 0) / n;
-        const avgOnTime = data.reduce((s, d) => s + d.on_time_rate, 0) / n;
-        const avgInFull = data.reduce((s, d) => s + d.in_full_rate, 0) / n;
-        const totalOrders = data.reduce((s, d) => s + d.total_orders, 0);
+        const n            = data.length;
+        const avgOtif      = data.reduce((s, d) => s + d.otif_rate,    0) / n;
+        const avgOnTime    = data.reduce((s, d) => s + d.on_time_rate, 0) / n;
+        const avgInFull    = data.reduce((s, d) => s + d.in_full_rate, 0) / n;
+        const totalOrders  = data.reduce((s, d) => s + d.total_orders, 0);
 
         document.getElementById('kpi-otif').textContent   = (avgOtif   * 100).toFixed(1) + '%';
         document.getElementById('kpi-ontime').textContent = (avgOnTime * 100).toFixed(1) + '%';
@@ -268,8 +321,7 @@
         document.getElementById('content').style.display = 'block';
 
       } catch (error) {
-        document.getElementById('loading').innerHTML =
-          '❌ Error loading data: ' + error.message;
+        document.getElementById('loading').textContent = 'Error loading data: ' + error.message;
         console.error('Error:', error);
       }
     }
@@ -288,9 +340,9 @@
             {
               label: 'OTIF %',
               data: data.map(d => pct(d.otif_rate)),
-              borderColor: '#667eea',
-              backgroundColor: 'rgba(102, 126, 234, 0.08)',
-              borderWidth: 3,
+              borderColor: '#4a9eff',
+              backgroundColor: 'rgba(74, 158, 255, 0.08)',
+              borderWidth: 2.5,
               fill: true,
               tension: 0.3,
               pointRadius: 3,
@@ -299,8 +351,8 @@
             {
               label: 'On Time %',
               data: data.map(d => pct(d.on_time_rate)),
-              borderColor: '#43e97b',
-              backgroundColor: 'rgba(67, 233, 123, 0.05)',
+              borderColor: '#3ecf8e',
+              backgroundColor: 'transparent',
               borderWidth: 2,
               fill: false,
               tension: 0.3,
@@ -311,8 +363,8 @@
             {
               label: 'In Full %',
               data: data.map(d => pct(d.in_full_rate)),
-              borderColor: '#f093fb',
-              backgroundColor: 'rgba(240, 147, 251, 0.05)',
+              borderColor: 'rgba(74, 158, 255, 0.45)',
+              backgroundColor: 'transparent',
               borderWidth: 2,
               fill: false,
               tension: 0.3,
@@ -327,10 +379,13 @@
           maintainAspectRatio: false,
           interaction: { mode: 'index', intersect: false },
           plugins: {
-            legend: { display: true, position: 'top' },
+            legend: { position: 'top' },
             tooltip: {
+              backgroundColor: '#1c2030',
+              borderColor: '#242840',
+              borderWidth: 1,
               callbacks: {
-                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y}%`
+                label: (ctx) => ` ${ctx.dataset.label}: ${ctx.parsed.y}%`
               }
             }
           },
@@ -340,23 +395,19 @@
               min: 20,
               max: 80,
               ticks: { callback: (v) => v + '%' },
-              grid: { color: 'rgba(0,0,0,0.05)' }
+              grid: { color: 'rgba(255,255,255,0.05)' }
             },
-            x: {
-              grid: { display: false }
-            }
+            x: { grid: { display: false } }
           }
         }
       });
     }
 
     function createYearChart(data) {
-      const ctx = document.getElementById('yearChart').getContext('2d');
-
+      const ctx   = document.getElementById('yearChart').getContext('2d');
       const d2023 = data.filter(d => d.month.startsWith('2023'));
       const d2024 = data.filter(d => d.month.startsWith('2024'));
-
-      const avg = (arr, key) => parseFloat((arr.reduce((s, d) => s + d[key], 0) / arr.length * 100).toFixed(2));
+      const avg   = (arr, key) => parseFloat((arr.reduce((s, d) => s + d[key], 0) / arr.length * 100).toFixed(2));
 
       new Chart(ctx, {
         type: 'bar',
@@ -365,23 +416,15 @@
           datasets: [
             {
               label: '2023',
-              data: [
-                avg(d2023, 'otif_rate'),
-                avg(d2023, 'on_time_rate'),
-                avg(d2023, 'in_full_rate')
-              ],
-              backgroundColor: '#667eea',
-              borderRadius: 6
+              data: [avg(d2023, 'otif_rate'), avg(d2023, 'on_time_rate'), avg(d2023, 'in_full_rate')],
+              backgroundColor: '#4a9eff',
+              borderRadius: 4
             },
             {
               label: '2024',
-              data: [
-                avg(d2024, 'otif_rate'),
-                avg(d2024, 'on_time_rate'),
-                avg(d2024, 'in_full_rate')
-              ],
-              backgroundColor: '#f093fb',
-              borderRadius: 6
+              data: [avg(d2024, 'otif_rate'), avg(d2024, 'on_time_rate'), avg(d2024, 'in_full_rate')],
+              backgroundColor: '#3ecf8e',
+              borderRadius: 4
             }
           ]
         },
@@ -389,10 +432,13 @@
           responsive: true,
           maintainAspectRatio: false,
           plugins: {
-            legend: { display: true, position: 'top' },
+            legend: { position: 'top' },
             tooltip: {
+              backgroundColor: '#1c2030',
+              borderColor: '#242840',
+              borderWidth: 1,
               callbacks: {
-                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y}%`
+                label: (ctx) => ` ${ctx.dataset.label}: ${ctx.parsed.y}%`
               }
             }
           },
@@ -401,7 +447,8 @@
               beginAtZero: false,
               min: 20,
               max: 80,
-              ticks: { callback: (v) => v + '%' }
+              ticks: { callback: (v) => v + '%' },
+              grid: { color: 'rgba(255,255,255,0.05)' }
             }
           }
         }
@@ -415,12 +462,14 @@
         data: {
           labels: data.map(d => d.month),
           datasets: [{
-            label: 'Ordini Totali',
+            label: 'Total Orders',
             data: data.map(d => d.total_orders),
             backgroundColor: data.map(d =>
-              d.month.startsWith('2023') ? 'rgba(102,126,234,0.7)' : 'rgba(240,147,251,0.7)'
+              d.month.startsWith('2023')
+                ? 'rgba(74, 158, 255, 0.65)'
+                : 'rgba(62, 207, 142, 0.65)'
             ),
-            borderRadius: 4
+            borderRadius: 3
           }]
         },
         options: {
@@ -429,21 +478,39 @@
           plugins: {
             legend: { display: false },
             tooltip: {
+              backgroundColor: '#1c2030',
+              borderColor: '#242840',
+              borderWidth: 1,
               callbacks: {
-                label: (ctx) => `Ordini: ${ctx.parsed.y.toLocaleString('it-IT')}`
+                label: (ctx) => ` Orders: ${ctx.parsed.y.toLocaleString('it-IT')}`
               }
             }
           },
           scales: {
             y: {
               beginAtZero: false,
-              ticks: { callback: (v) => v.toLocaleString('it-IT') }
+              ticks: { callback: (v) => v.toLocaleString('it-IT') },
+              grid: { color: 'rgba(255,255,255,0.05)' }
             },
             x: { grid: { display: false } }
           }
         }
       });
     }
+
+    // ── Navbar mobile toggle (same as main.js) ──
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu   = document.querySelector('.nav-menu');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      });
+    }
+
+    // ── Dynamic year ──
+    const yearEl = document.querySelector('.current-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     loadData();
   </script>
